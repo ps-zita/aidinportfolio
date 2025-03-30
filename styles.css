@@ -1,188 +1,242 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto Slab', serif;
-    background-color: #fff;
-    color: #000;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-.roboto-slab {
-  font-family: "Roboto Slab", serif;
-  font-optical-sizing: auto;
-  font-weight: 100;
-  font-style: normal;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Slab', serif;
+  /* Jungle theme background */
+  background: url('assets/jungle.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
-    background: #fff;
-    color: #000;
-    border-bottom: 1px solid #000;
-    padding: 10px 0; /* Reduced padding to make the navbar shorter */
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    text-align: center;
+  background: #fff; /* Fully opaque navbar */
+  color: #000;
+  border-bottom: 1px solid #000;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  text-align: center;
 }
 
 .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .logo {
-    flex-grow: 1;
-    text-align: center;
-    transition: opacity 0.3s ease;
+  text-align: center;
 }
 
 .logo img {
-    max-width: 165px; /* Set the max-width of the logo image */
-    height: auto;
+  max-width: 21%;
+  height: auto;
 }
 
 .nav-links {
-    list-style: none;
-    display: flex;
-    flex-grow: 2;
-    justify-content: flex-start;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .nav-links li {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 .nav-links a {
-    color: #000;
-    text-decoration: none;
-    font-size: 20px;
-    padding: 10px 15px;
-    transition: color 0.3s ease, background 0.3s ease;
+  color: #000;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px 15px;
+  transition: color 0.3s ease, background 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #555;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+  color: #555;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
 }
 
 main {
-    display: flex;
-    justify-content: space-between;
-    padding: 100px 20px 20px; /* Adjusted padding to avoid content being off-screen */
+  display: flex;
+  padding: 100px 20px 20px;
+  /* Reserve half the viewport for the fixed headshot */
+  margin-right: 50vw;
 }
 
 .media {
-    flex: 1;
-    margin-right: 20px;
+  flex: 1;
+  margin-right: 20px;
 }
 
-.video,
-.audio {
-    margin-bottom: 20px;
-}
-
+/* Responsive 4:3 video container that matches the width of the audio players */
 .video-container {
-    border: 1px solid #000;
-    padding: 10px;
-    border-radius: 5px;
-    background: #fff;
+  position: relative;
+  width: 100%;
+  background: #fff;
+  margin-bottom: 20px;
 }
 
-.video-container video {
-    width: 100%;
+/* Video.js progress bar color override from the jungle theme */
+.vjs-default-skin .vjs-play-progress,
+.vjs-default-skin .vjs-load-progress {
+  background-color: black !important;
 }
 
-.video-container video::-webkit-media-controls-panel,
-.video-container video::-webkit-media-controls-play-button,
-.video-container video::-webkit-media-controls-timeline,
-.video-container video::-webkit-media-controls-volume-slider,
-.video-container video::-webkit-media-controls-mute-button,
-.video-container video::-webkit-media-controls-fullscreen-button {
-    display: none !important;
-}
-
-.custom-controls {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-}
-
+/* Audio players styling */
 .audio-player {
-    margin-bottom: 20px;
-    border: 1px solid #000;
-    padding: 10px;
-    border-radius: 5px;
-    background: #fff;
+  margin-bottom: 20px;
+  border: 1px solid #000;
+  padding: 10px;
+  background: #fff;
 }
 
 .audio-text {
-    color: #000;
-    margin-bottom: 10px;
+  color: #000;
+  margin-bottom: 10px;
 }
 
 .controls {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
+/* Remove button styling so only images show */
 .play-pause {
-    background: #fff;
-    border: 1px solid #000;
-    color: #000;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background 0.3s ease;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-right: 10px;
+  cursor: pointer;
 }
 
-.play-pause:hover {
-    background: #f0f0f0;
+/* Size the play/pause icon images */
+.play-pause .icon {
+  width: 30px;
+  height: auto;
 }
 
+/* Progress container for slider - moved up to align with the play-pause icon */
 .progress-container {
-    flex-grow: 1;
+  flex-grow: 1;
+  position: relative;
+  margin-top: 0;
 }
 
+/* Time display styles */
+.time-display {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: #000;
+}
+
+/* Style the slider (progress bar) for audio players */
 .progress {
-    width: 100%;
-    cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  transition: background 0.1s linear;
 }
 
+.progress::-webkit-slider-runnable-track {
+  height: 10px;
+  border: 1px solid black;
+  border-radius: 0;
+  background: transparent;
+}
+
+.progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  background: black;
+  border-radius: 50%;
+  margin-top: -3.7px;
+  margin-left: -1px;
+  transition: background 0.1s linear;
+}
+
+.progress::-moz-range-track {
+  height: 10px;
+  border: 1px solid black;
+  border-radius: 0;
+  background: transparent;
+}
+
+.progress::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: black;
+  border-radius: 50%;
+}
+
+.progress::-ms-track {
+  height: 10px;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+.progress::-ms-thumb {
+  width: 15px;
+  height: 15px;
+  background: black;
+  border-radius: 50%;
+}
+
+/* Fixed headshot on the right spanning half the screen width */
 .headshot {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-left: 1px solid #000;
+  z-index: 500;
 }
 
 .headshot img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  border-radius: 0;
 }
 
 @media (max-width: 768px) {
-    .nav-links {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-    }
-
-    main {
-        flex-direction: column;
-    }
-
-    .media {
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
+  .nav-links {
+    flex-direction: column;
+    text-align: center;
+  }
+  main {
+    flex-direction: column;
+    margin-right: 0;
+  }
+  .media {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .headshot {
+    display: none;
+  }
 }

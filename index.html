@@ -1,89 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>i'm aiden :]</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>im aidin :]</title>
+    <!-- Video.js CSS from CDN -->
+    <link href="https://vjs.zencdn.net/8.0.4/video-js.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <header>
-        <nav>
-            <div class="navbar-container">
-                <ul class="nav-links">
-                    <li><a href="#demos">Demos</a></li>
-                    <li><a href="#clients">Clients</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="logo">
-                    <img src="assets/logo.png" alt="Logo">
-                </div>
-            </div>
-        </nav>
+      <nav>
+        <div class="navbar-container">
+          <ul class="nav-links">
+            <li><a href="#">demos</a></li>
+            <li><a href="#clients">clients</a></li>
+            <li><a href="#contact">contact</a></li>
+          </ul>
+          <div class="logo">
+            <img src="assets/logo.png" alt="Logo" />
+          </div>
+        </div>
+      </nav>
     </header>
     <main>
-        <section class="media">
-            <div class="video">
-                <div class="video-container">
-                    <video id="video-player">
-                        <source src="assets/demo-video.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="custom-controls">
-                        <button class="play-pause" id="video-play-pause">Play</button>
-                        <div class="progress-container">
-                            <input type="range" class="progress" id="video-progress" value="0" step="1" min="0" max="100">
-                        </div>
-                    </div>
-                </div>
+      <section class="media">
+        <div class="video-container">
+          <!-- Video.js player in fluid mode so it keeps a 4:3 ratio and resizes correctly -->
+          <video
+            id="my-video"
+            class="video-js vjs-default-skin"
+            controls
+            preload="auto"
+            data-setup='{"fluid": true, "aspectRatio": "4:3"}'
+          >
+            <source src="assets/demo-video.mp4" type="video/mp4" />
+            Your browser does not support HTML5 video.
+          </video>
+        </div>
+        <div class="audio">
+          <div class="audio-player">
+            <div class="audio-text">fartin & poopin demo</div>
+            <div class="controls">
+              <button class="play-pause" id="play-pause-1">
+                <img src="assets/play.png" alt="play" class="icon" />
+              </button>
+              <div class="progress-container">
+                <div class="time-display" id="time-display-1">0:00 / 0:00</div>
+                <input
+                  type="range"
+                  class="progress"
+                  id="progress-1"
+                  value="0"
+                  step="0.1"
+                  min="0"
+                  max="100"
+                />
+              </div>
             </div>
-            <div class="audio">
-                <div class="audio-player">
-                    <div class="audio-text">Demo 1</div>
-                    <div class="controls">
-                        <button class="play-pause" id="play-pause-1">Play</button>
-                        <div class="progress-container">
-                            <input type="range" class="progress" id="progress-1" value="0" step="1" min="0" max="100">
-                        </div>
-                    </div>
-                    <audio id="audio-1">
-                        <source src="assets/demo1.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="audio-player">
-                    <div class="audio-text">Demo 2</div>
-                    <div class="controls">
-                        <button class="play-pause" id="play-pause-2">Play</button>
-                        <div class="progress-container">
-                            <input type="range" class="progress" id="progress-2" value="0" step="1" min="0" max="100">
-                        </div>
-                    </div>
-                    <audio id="audio-2">
-                        <source src="demo2.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="audio-player">
-                    <div class="audio-text">Demo 3</div>
-                    <div class="controls">
-                        <button class="play-pause" id="play-pause-3">Play</button>
-                        <div class="progress-container">
-                            <input type="range" class="progress" id="progress-3" value="0" step="1" min="0" max="100">
-                        </div>
-                    </div>
-                    <audio id="audio-3">
-                        <source src="demo3.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
+            <audio id="audio-1">
+              <source src="assets/demo1.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+          <div class="audio-player">
+            <div class="audio-text">freaking it demo</div>
+            <div class="controls">
+              <button class="play-pause" id="play-pause-2">
+                <img src="assets/play.png" alt="play" class="icon" />
+              </button>
+              <div class="progress-container">
+                <div class="time-display" id="time-display-2">0:00 / 0:00</div>
+                <input
+                  type="range"
+                  class="progress"
+                  id="progress-2"
+                  value="0"
+                  step="0.1"
+                  min="0"
+                  max="100"
+                />
+              </div>
             </div>
-        </section>
-        <section class="headshot">
-            <img src="assets/headshot.webp" alt="Voice Actor Headshot">
-        </section>
+            <audio id="audio-2">
+              <source src="assets/demo2.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+          <div class="audio-player">
+            <div class="audio-text">yurrrrr demo</div>
+            <div class="controls">
+              <button class="play-pause" id="play-pause-3">
+                <img src="assets/play.png" alt="play" class="icon" />
+              </button>
+              <div class="progress-container">
+                <div class="time-display" id="time-display-3">0:00 / 0:00</div>
+                <input
+                  type="range"
+                  class="progress"
+                  id="progress-3"
+                  value="0"
+                  step="0.1"
+                  min="0"
+                  max="100"
+                />
+              </div>
+            </div>
+            <audio id="audio-3">
+              <source src="assets/demo3.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+        </div>
+      </section>
+      <section class="headshot">
+        <img src="assets/headshot.webp" alt="Voice Actor Headshot" />
+      </section>
     </main>
+    <!-- Video.js library from CDN -->
+    <script src="https://vjs.zencdn.net/8.0.4/video.min.js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
