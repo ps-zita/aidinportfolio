@@ -5,38 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>clients</title>
     <link href="https://vjs.zencdn.net/8.0.4/video-js.css" rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <style>
+      /* Prevent horizontal scrolling */
+      body,
+      html {
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+      }
+
       /* Main content is centered and stacked vertically */
       main {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%;
+        padding: 100px 20px 20px;
       }
-      
-      /* Clients section: headshot and resume side-by-side, centered in the middle */
+
+      /* Clients section: headshot and resume side-by-side, centered */
       .clients-section {
-        width: 100vw;
+        width: 100%;
         max-width: 1200px;
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 10px; /* Reduced gap between the two sections */
+        gap: 10px;
         margin: 40px auto;
+        padding: 0 20px;
       }
-      
-      /* Headshot container with added left padding */
+
+      /* Headshot container */
       .headshot-left {
         flex: 1;
-        padding-left: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
       }
+
       .headshot-left img {
         height: 60vh;
         width: auto;
@@ -44,7 +53,7 @@
         border: 1px solid #000;
         filter: grayscale(100%);
       }
-      
+
       /* CV template container */
       .cv-template {
         flex: 1;
@@ -52,31 +61,36 @@
         justify-content: center;
         align-items: center;
       }
+
       .cv-template img {
-        height: 60vh;
+        max-height: 60vh;
         width: auto;
         object-fit: contain;
         border: 1px solid #000;
       }
-      
-      /* Marquee container spans 150vw */
+
+      /* Marquee container spans full viewport width */
       .marquee-container {
-        width: 150vw;
+        width: 100%;
         overflow: hidden;
-        margin-top: 40px;
+        margin-top: 20px;
         white-space: nowrap;
         display: flex;
         justify-content: center;
       }
+
       .marquee {
         display: flex;
         gap: 30px;
         animation: slide 55s linear infinite;
+        width: 100%;
       }
+
       .marquee img {
-        height: 80px;
+        height: 8vh;
         width: auto;
       }
+
       @keyframes slide {
         0% {
           transform: translateX(100%);
@@ -85,10 +99,38 @@
           transform: translateX(-100%);
         }
       }
-      
-      /* Navbar container adjustment */
-      .navbar-container {
-        justify-content: space-between;
+
+      /* Mobile mode adjustments */
+      @media (max-width: 768px) {
+        /* Hide the headshot */
+        .headshot-left {
+          display: none;
+        }
+        /* Make the CV span the full viewport width so it touches both sides */
+        .cv-template {
+          margin: 0;
+          padding: 0;
+          justify-content: center;
+        }
+        .cv-template img {
+          width: 110vw;
+          height: auto;
+          max-height: none;
+          object-fit: cover;
+          border: none;
+          margin: 0;
+          padding-right: 5%;
+        }
+        .marquee {
+        display: flex;
+        gap: 30px;
+        animation: slide 15s linear infinite;
+        width: 100%;
+      }
+        /* Remove horizontal padding from main */
+        main {
+          padding: 100px 0 20px;
+        }
       }
     </style>
   </head>
@@ -102,35 +144,40 @@
             <li><a href="#contact">contact</a></li>
           </ul>
           <div class="logo">
-            <img src="assets/logo.png" alt="Logo" />
+            <img src="assets/logo.png" alt="Logo">
           </div>
         </div>
       </nav>
     </header>
     <main>
-      <!-- Clients Section: centered headshot and resume -->
+      <!-- Clients Section: headshot and resume -->
       <section class="clients-section">
         <div class="headshot-left">
-          <img src="assets/headshot2.png" alt="Aidin Headshot" />
+          <img src="assets/headshot2.png" alt="Aidin Headshot">
         </div>
         <div class="cv-template">
-          <img src="assets/resume.png" alt="Resume/CV" />
+          <img src="assets/resume.png" alt="Resume/CV">
         </div>
       </section>
-      <!-- Marquee Section with 10 placeholder logo images -->
+      <!-- Marquee Section with company logo images -->
       <section class="marquee-container">
         <div class="marquee">
-          <img src="assets/acme.webp" alt="Logo 1" />
-          <img src="assets/central.webp" alt="Logo 2" />
-          <img src="assets/duff.webp" alt="Logo 3" />
-          <img src="assets/dunder.webp" alt="Logo 4" />
-          <img src="assets/lospollos.webp" alt="Logo 5" />
-          <img src="assets/MONSTERSiNC.webp" alt="Logo 6" />
-          <img src="assets/vandelay.webp" alt="Logo 7" />
-          <img src="assets/Pendant.webp" alt="Logo 8" />
+          <img src="assets/acme.webp" alt="Logo 1">
+          <img src="assets/central.webp" alt="Logo 2">
+          <img src="assets/duff.webp" alt="Logo 3">
+          <img src="assets/dunder.webp" alt="Logo 4">
+          <img src="assets/lospollos.webp" alt="Logo 5">
+          <img src="assets/MONSTERSiNC.webp" alt="Logo 6">
+          <img src="assets/vandelay.webp" alt="Logo 7">
+          <img src="assets/Pendant.webp" alt="Logo 8">
         </div>
       </section>
     </main>
-    <script src="script.js"></script>
+    <script>
+      function toggleMobileNav() {
+        const mobileNav = document.querySelector('.mobile-nav');
+        mobileNav.classList.toggle('show');
+      }
+    </script>
   </body>
 </html>

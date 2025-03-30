@@ -45,6 +45,7 @@ header {
   list-style: none;
   display: flex;
   justify-content: flex-start;
+  flex-direction: row;
 }
 
 .nav-links li {
@@ -243,7 +244,7 @@ main {
 /* FAQ answer styling */
 .faq-answer {
   font-size: 16px;
-  line-height: 1.6; /* Increased line spacing */
+  line-height: 1.6;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease, margin-top 0.3s ease, padding 0.3s ease;
@@ -298,16 +299,28 @@ main {
 
 @media (max-width: 768px) {
   .nav-links {
-    flex-direction: column;
+    flex-direction: row;
     text-align: center;
   }
   main {
     flex-direction: column;
     margin-right: 0;
+    width: 100vw; /* Set width to full viewport width */
+    padding: 100px 0 20px; /* Remove horizontal padding so content touches both sides */
   }
   .media {
     margin-right: 0;
     margin-bottom: 20px;
+  }
+  .headshot {
+    display: none;
+  }
+}
+
+/* In vertical (portrait) orientation, hide the logo */
+@media (orientation: portrait) {
+  .logo {
+    display: none;
   }
   .headshot {
     display: none;
