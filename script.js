@@ -1,10 +1,10 @@
-// Define image paths for play and pause
+// Audio Players Functionality
 const playIcon = "assets/play.png";
 const pauseIcon = "assets/pause.png";
 
 const audioPlayers = document.querySelectorAll('.audio-player');
 
-audioPlayers.forEach((player) => {
+audioPlayers.forEach(player => {
   const audio = player.querySelector('audio');
   const playPauseButton = player.querySelector('.play-pause');
   const progress = player.querySelector('.progress');
@@ -40,40 +40,14 @@ audioPlayers.forEach((player) => {
   });
 });
 
-const videoPlayer = document.getElementById('video-player');
-const videoPlayPauseButton = document.getElementById('video-play-pause');
-const videoProgress = document.getElementById('video-progress');
-const videoTimeDisplay = document.getElementById('video-time-display');
-
-// Set initial icon for video
-videoPlayPauseButton.innerHTML = `<img src="${playIcon}" alt="play" class="icon">`;
-
-videoPlayPauseButton.addEventListener('click', () => {
-  if (videoPlayer.paused) {
-    videoPlayer.play();
-    videoPlayPauseButton.innerHTML = `<img src="${pauseIcon}" alt="pause" class="icon">`;
-  } else {
-    videoPlayer.pause();
-    videoPlayPauseButton.innerHTML = `<img src="${playIcon}" alt="play" class="icon">`;
-  }
+// FAQ Accordion Functionality with animation
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.addEventListener('click', () => {
+    item.classList.toggle('open');
+  });
 });
 
-videoPlayer.addEventListener('timeupdate', () => {
-  if (videoPlayer.duration) {
-    let percentage = (videoPlayer.currentTime / videoPlayer.duration) * 100;
-    if (percentage > 100) percentage = 100;
-    videoProgress.value = percentage;
-    updateTimeDisplay(videoPlayer, videoTimeDisplay);
-    updateProgressBar(videoProgress, percentage);
-  }
-});
-
-videoProgress.addEventListener('input', () => {
-  if (videoPlayer.duration) {
-    videoPlayer.currentTime = (videoProgress.value / 100) * videoPlayer.duration;
-  }
-});
-
+// Update utility functions
 function updateTimeDisplay(mediaElement, displayElement) {
   const currentTime = formatTime(mediaElement.currentTime);
   const duration = formatTime(mediaElement.duration);

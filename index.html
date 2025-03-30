@@ -6,6 +6,11 @@
     <title>im aidin :]</title>
     <!-- Video.js CSS from CDN -->
     <link href="https://vjs.zencdn.net/8.0.4/video-js.css" rel="stylesheet" />
+    <!-- Merriweather Font for About Me -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -14,7 +19,7 @@
         <div class="navbar-container">
           <ul class="nav-links">
             <li><a href="#">demos</a></li>
-            <li><a href="#clients">clients</a></li>
+            <li><a href="clients.html">clients / cv</a></li>
             <li><a href="#contact">contact</a></li>
           </ul>
           <div class="logo">
@@ -26,7 +31,7 @@
     <main>
       <section class="media">
         <div class="video-container">
-          <!-- Video.js player in fluid mode so it keeps a 4:3 ratio and resizes correctly -->
+          <!-- Video.js player in fluid mode so it keeps a 4:3 ratio -->
           <video
             id="my-video"
             class="video-js vjs-default-skin"
@@ -40,11 +45,9 @@
         </div>
         <div class="audio">
           <div class="audio-player">
-            <div class="audio-text">fartin & poopin demo</div>
+            <div class="audio-text">fartin &amp; poopin demo</div>
             <div class="controls">
-              <button class="play-pause" id="play-pause-1">
-                <img src="assets/play.png" alt="play" class="icon" />
-              </button>
+              <button class="play-pause" id="play-pause-1"></button>
               <div class="progress-container">
                 <div class="time-display" id="time-display-1">0:00 / 0:00</div>
                 <input
@@ -66,9 +69,7 @@
           <div class="audio-player">
             <div class="audio-text">freaking it demo</div>
             <div class="controls">
-              <button class="play-pause" id="play-pause-2">
-                <img src="assets/play.png" alt="play" class="icon" />
-              </button>
+              <button class="play-pause" id="play-pause-2"></button>
               <div class="progress-container">
                 <div class="time-display" id="time-display-2">0:00 / 0:00</div>
                 <input
@@ -90,9 +91,7 @@
           <div class="audio-player">
             <div class="audio-text">yurrrrr demo</div>
             <div class="controls">
-              <button class="play-pause" id="play-pause-3">
-                <img src="assets/play.png" alt="play" class="icon" />
-              </button>
+              <button class="play-pause" id="play-pause-3"></button>
               <div class="progress-container">
                 <div class="time-display" id="time-display-3">0:00 / 0:00</div>
                 <input
@@ -110,6 +109,66 @@
               <source src="assets/demo3.mp3" type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
+          </div>
+          <!-- About Me Section -->
+          <div class="about-me">
+            <h2>Hey, I'm Aidin Lastname</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec diam vitae mauris convallis scelerisque. Donec eget tincidunt lorem, vel tincidunt justo.
+            </p>
+            <p>
+              Maecenas eget libero blandit, faucibus turpis eget, faucibus nibh. Curabitur sit amet tempor turpis. Mauris et lacus ligula. Nam ut massa in quam feugiat consequat.
+            </p>
+            <p>
+              Vivamus sit amet congue dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut sapien quis dolor cursus condimentum.
+            </p> <br>
+            <!-- FAQ Section -->
+            <div class="faq-section">
+              <h3>Frequently Asked Questions</h3>
+              <div class="faq-item">
+                <div class="faq-question">
+                  <span class="faq-text">What are your rates? Usage rates?</span>
+                  <span class="faq-plus">+</span>
+                </div>
+                <div class="faq-answer">
+                  Rates can differ depending on usage and the type of project, <br>
+                  please see the <a href="https://globalvoiceacademy.com/gvaa-rate-guide-2/#">Global Voice Academy rate guide</a> for an estimate of what you may be looking at.
+                  <br> For indie and student projects, please email me.
+
+                </div>
+                <div class="faq-line"></div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question">
+                  <span class="faq-text">Do you have an agent? Are you union or non-union?</span>
+                  <span class="faq-plus">+</span>
+                </div>
+                <div class="faq-answer">
+                  idk lol
+                </div>
+                <div class="faq-line"></div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question">
+                  <span class="faq-text">Can you provide a sample of previous work you've done?</span>
+                  <span class="faq-plus">+</span>
+                </div>
+                <div class="faq-answer">
+                  blehhhh, mleeeeh bleeh bluuuuhh huuhh gnuuuu fnuuuu huh
+                </div>
+                <div class="faq-line"></div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question">
+                  <span class="faq-text">Who have you worked with?</span>
+                  <span class="faq-plus">+</span>
+                </div>
+                <div class="faq-answer">
+                  Feel free to check the clients thingy! my bhfkdsfjh is so dhaskjdhsa
+                </div>
+                <div class="faq-line"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
