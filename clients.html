@@ -51,22 +51,21 @@
         width: auto;
         object-fit: cover;
         border: 1px solid #000;
-        filter: grayscale(100%);
+        /* Removed grayscale filter so the image displays in full color */
       }
 
-      /* CV template container */
+      /* Instead of CV image, we display text "COMING SOON" */
       .cv-template {
         flex: 1;
         display: flex;
         justify-content: center;
         align-items: center;
-      }
-
-      .cv-template img {
-        max-height: 60vh;
-        width: auto;
-        object-fit: contain;
+        font-family: 'Merriweather', serif;
+        font-size: 3rem;
+        font-weight: bold;
         border: 1px solid #000;
+        height: 60vh;
+        width: 100%;
       }
 
       /* Marquee container spans full viewport width */
@@ -79,25 +78,13 @@
         justify-content: center;
       }
 
+      /* Replace all logos with text "COMING SOON" */
       .marquee {
-        display: flex;
-        gap: 30px;
-        animation: slide 55s linear infinite;
         width: 100%;
-      }
-
-      .marquee img {
-        height: 8vh;
-        width: auto;
-      }
-
-      @keyframes slide {
-        0% {
-          transform: translateX(100%);
-        }
-        100% {
-          transform: translateX(-100%);
-        }
+        text-align: center;
+        font-family: 'Merriweather', serif;
+        font-size: 2rem;
+        font-weight: bold;
       }
 
       /* Mobile mode adjustments */
@@ -111,22 +98,13 @@
           margin: 0;
           padding: 0;
           justify-content: center;
-        }
-        .cv-template img {
           width: 110vw;
-          height: auto;
-          max-height: none;
-          object-fit: cover;
           border: none;
-          margin: 0;
-          padding-right: 5%;
         }
+        /* Adjust marquee animation speed if needed */
         .marquee {
-        display: flex;
-        gap: 30px;
-        animation: slide 15s linear infinite;
-        width: 100%;
-      }
+          font-size: 1.5rem;
+        }
         /* Remove horizontal padding from main */
         main {
           padding: 100px 0 20px;
@@ -150,26 +128,19 @@
       </nav>
     </header>
     <main>
-      <!-- Clients Section: headshot and resume -->
+      <!-- Clients Section: headshot and resume text -->
       <section class="clients-section">
         <div class="headshot-left">
           <img src="assets/headshot2.png" alt="Aidin Headshot">
         </div>
         <div class="cv-template">
-          <img src="assets/resume.png" alt="Resume/CV">
+          COMING SOON
         </div>
       </section>
-      <!-- Marquee Section with company logo images -->
+      <!-- Marquee Section replaced with "COMING SOON" text -->
       <section class="marquee-container">
         <div class="marquee">
-          <img src="assets/acme.webp" alt="Logo 1">
-          <img src="assets/central.webp" alt="Logo 2">
-          <img src="assets/duff.webp" alt="Logo 3">
-          <img src="assets/dunder.webp" alt="Logo 4">
-          <img src="assets/lospollos.webp" alt="Logo 5">
-          <img src="assets/MONSTERSiNC.webp" alt="Logo 6">
-          <img src="assets/vandelay.webp" alt="Logo 7">
-          <img src="assets/Pendant.webp" alt="Logo 8">
+          COMING SOON
         </div>
       </section>
     </main>

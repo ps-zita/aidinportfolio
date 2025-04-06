@@ -12,6 +12,67 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Ensure logos are consistently sized and not huge */
+      .placeholder-logos .logos img {
+        max-width: 50px;
+        max-height: 50px;
+        width: auto;
+        height: auto;
+        margin: 5px;
+      }
+      /* Adjust layout for headshot section */
+      main {
+        display: flex;
+        padding: 100px 20px 20px;
+        margin-right: 40vw; /* Reduced reserved space for headshot from 50vw to 40vw */
+      }
+      .headshot {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 40vw; /* Reduced width so dividing line moves more to the right */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+        border-left: 1px solid #000;
+        z-index: 500;
+      }
+      .headshot img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Change to contain to display more of the image (zoomed out) */
+        filter: none; /* Removed greyscale filter */
+        border-radius: 0;
+      }
+      /* Media Query to restore content on mobile */
+      @media (max-width: 768px) {
+        main {
+          flex-direction: column;
+          margin-right: 0;
+          width: 100vw;
+          padding: 100px 0 20px;
+        }
+        .media {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+        .headshot {
+          display: none;
+        }
+      }
+      /* In vertical (portrait) orientation, hide the logo */
+      @media (orientation: portrait) {
+        .logo {
+          display: none;
+        }
+        .headshot {
+          display: none;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -37,7 +98,7 @@
             class="video-js vjs-default-skin"
             controls
             preload="auto"
-            data-setup='{"fluid": true, "aspectRatio": "4:3"}'
+            data-setup='{"fluid": true, "aspectRatio": "16:9"}'
           >
             <source src="assets/demo-video.mp4" type="video/mp4" />
             Your browser does not support HTML5 video.
@@ -45,7 +106,7 @@
         </div>
         <div class="audio">
           <div class="audio-player">
-            <div class="audio-text">fartin &amp; poopin demo</div>
+            <div class="audio-text">Aidin Murtha Character Demo Reel</div>
             <div class="controls">
               <button class="play-pause" id="play-pause-1"></button>
               <div class="progress-container">
@@ -62,12 +123,12 @@
               </div>
             </div>
             <audio id="audio-1">
-              <source src="assets/demo1.mp3" type="audio/mpeg" />
+              <source src="assets/Aidin_Murtha_Character_Demo_Reel.wav" type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
           </div>
           <div class="audio-player">
-            <div class="audio-text">freaking it demo</div>
+            <div class="audio-text">Raw Booth Audio</div>
             <div class="controls">
               <button class="play-pause" id="play-pause-2"></button>
               <div class="progress-container">
@@ -84,12 +145,34 @@
               </div>
             </div>
             <audio id="audio-2">
-              <source src="assets/demo2.mp3" type="audio/mpeg" />
+              <source src="assets/Raw_Booth_Audio.wav" type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
           </div>
           <div class="audio-player">
-            <div class="audio-text">yurrrrr demo</div>
+            <div class="audio-text">Aidin Murtha Commercial Demo Reel</div>
+            <div class="controls">
+              <button class="play-pause" id="play-pause-3"></button>
+              <div class="progress-container">
+                <div class="time-display" id="time-display-3">0:00 / 0:00</div>
+                <input
+                  type="range"
+                  class="progress"
+                  id="progress-3"
+                  value="0"
+                  step="0.1"
+                  min="0"
+                  max="100"
+                />
+              </div>
+            </div>
+            <audio id="audio-3">
+              <source src="assets/demo3.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+          <div class="audio-player">
+            <div class="audio-text">Aidin Murtha Audiobook Demo Reel</div>
             <div class="controls">
               <button class="play-pause" id="play-pause-3"></button>
               <div class="progress-container">
@@ -121,19 +204,19 @@
             </p>
             <p>
               Thanks for taking the time to look at my site and I hope to work with you soon :3
-            </p> <br>
+            </p>
             <!-- FAQ Section -->
             <div class="faq-section">
               <h3>Frequently Asked Questions</h3>
               <div class="faq-item">
                 <div class="faq-question">
-                  <span class="faq-text">What are your rates? Are you remote-capable</span>
+                  <span class="faq-text">What are your rates? Are you remote-capable?</span>
                   <span class="faq-plus">+</span>
                 </div>
                 <div class="faq-answer">
-                  For a general overview, consult the <a href="https://globalvoiceacademy.com/gvaa-rate-guide-2/#">Global Voice Academy rate guide</a>, as I try to maintain best practices for professional projects. <br>
-                  If you do not believe your project is of this scale or you cannot afford these rates, please, do not hestitate to reach out! I am more than happy to discuss what rates would work for you.
-
+                  For a general overview, consult the 
+                  <a href="https://globalvoiceacademy.com/gvaa-rate-guide-2/#">Global Voice Academy rate guide</a>, as I try to maintain best practices for professional projects. <br>
+                  If you do not believe your project is of this scale or you cannot afford these rates, please, do not hesitate to reach out! I am more than happy to discuss what rates would work for you.
                 </div>
                 <div class="faq-line"></div>
               </div>
@@ -163,13 +246,63 @@
                   <span class="faq-plus">+</span>
                 </div>
                 <div class="faq-answer">
-                  Outside of my demo reels above, my social media accounts have a huge backlog of my work going back years, to hopefully give you an idea of my talents as a voice actor as well as my comedic sensibilities. 
+                  Outside of my demo reels above, my social media accounts have a huge backlog of my work going back years, to hopefully give you an idea of my talents as a voice actor as well as my comedic sensibilities. <br>
+                  <a href="https://www.tiktok.com/@babycakesbbz">TikTok</a> <br>
+                  <a href="https://www.instagram.com/babycakesbbz/">Instagram</a> <br>
+                  <a href="https://bsky.app/profile/babycakesbbz">Bluesky</a> <br>
+                  <a href="https://www.tumblr.com/babycakesremoved">Tumblr</a>
+                </div>
+                <div class="faq-line"></div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question">
+                  <span class="faq-text">Is there anyway I can support you as a fan without hiring you directly for my project?</span>
+                  <span class="faq-plus">+</span>
+                </div>
+                <div class="faq-answer">
+                  Of course! First off, just watching and interacting with my content is a huge help, so thank you; if you are interested in supporting in other ways, you can 
+                  <a href="https://discord.com/invite/qsG7JxNTrt">join the Discord</a>, support me on 
+                  <a href="https://www.patreon.com/c/babycakesbbz">Patreon</a>, or check out my Ko‑fi (coming soon!).
+                </div>
+                <div class="faq-line"></div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question">
+                  <span class="faq-text">What equipment and software do you use?</span>
+                  <span class="faq-plus">+</span>
+                </div>
+                <div class="faq-answer">
+                  My microphone is a Lewitt 540s, my audio interface is an Audient iD4, and my DAW is 
+                  <a href="https://www.reaper.fm/">Reaper</a> (the best DAW c:).
                 </div>
                 <div class="faq-line"></div>
               </div>
             </div>
           </div>
         </div>
+        <!-- Placeholder Logos Section at the bottom of the left content -->
+        <section class="placeholder-logos">
+          <div class="logos">
+            <a href="https://www.tiktok.com/@babycakesbbz">
+              <img src="assets/tiktok.png" alt="TikTok Logo" />
+            </a>
+            <a href="https://www.instagram.com/babycakesbbz/">
+              <img src="assets/instagram.png" alt="Instagram Logo" />
+            </a>
+            <a href="https://bsky.app/profile/babycakesbbz">
+              <img src="assets/bluesky.svg" alt="Bluesky Logo" />
+            </a>
+            <a href="https://www.tumblr.com/babycakesremoved">
+              <img src="assets/tumblr.png" alt="Tumblr Logo" />
+            </a>
+            <a href="https://discord.com/invite/qsG7JxNTrt">
+              <img src="assets/discord.png" alt="Discord Logo" />
+            </a>
+            <a href="https://www.patreon.com/c/babycakesbbz">
+              <img src="assets/patreon.png" alt="Patreon Logo" />
+            </a>
+          </div>
+        </section>
       </section>
       <section class="headshot">
         <img src="assets/headshot.webp" alt="Voice Actor Headshot" />
