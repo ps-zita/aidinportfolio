@@ -84,6 +84,16 @@
           display: none;
         }
       }
+
+      .youtube-embed {
+        height: 450px;
+      }
+
+      @media (max-width: 768px) {
+        .youtube-embed {
+          height: 250px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -103,19 +113,6 @@
     </header>
     <main>
       <section class="media">
-        <div class="video-container">
-          <!-- Video.js player in fluid mode so it keeps a 4:3 ratio -->
-          <video
-            id="my-video"
-            class="video-js vjs-default-skin"
-            controls
-            preload="auto"
-            data-setup='{"fluid": true, "aspectRatio": "16:9"}'
-          >
-            <source src="assets/demo-video.mp4" type="video/mp4" />
-            Your browser does not support HTML5 video.
-          </video>
-        </div>
         <div class="audio">
           <div class="audio-player">
             <div class="audio-text">Aidin Murtha Character Demo Reel</div>
@@ -162,7 +159,7 @@
             </audio>
           </div>
           <div class="audio-player">
-            <div class="audio-text">Aidin Murtha Commercial Demo Reel</div>
+            <div class="audio-text">Aidin Murtha Commercial Demo Reel (coming soon!)</div>
             <div class="controls">
               <button class="play-pause" id="play-pause-3"></button>
               <div class="progress-container">
@@ -184,7 +181,7 @@
             </audio>
           </div>
           <div class="audio-player">
-            <div class="audio-text">Aidin Murtha Audiobook Demo Reel</div>
+            <div class="audio-text">Aidin Murtha Audiobook Demo Reel (coming soon!)</div>
             <div class="controls">
               <button class="play-pause" id="play-pause-3"></button>
               <div class="progress-container">
@@ -205,6 +202,9 @@
               Your browser does not support the audio element.
             </audio>
           </div>
+        <div class="video-container">
+          <iframe class="youtube-embed" width="100%" src="https://www.youtube.com/embed/KAF2hPjZnWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
           <!-- About Me Section -->
           <div class="about-me">
             <h2>Hey, I'm Aidin Murtha</h2>
@@ -227,7 +227,7 @@
                 </div>
                 <div class="faq-answer">
                   For a general overview, consult the 
-                  <a href="https://globalvoiceacademy.com/gvaa-rate-guide-2/#">Global Voice Academy rate guide</a>, as I try to maintain best practices for professional projects. <br>
+                  <a href="https://globalvoiceacademy.com/gvaa-rate-guide-2/#">Global Voice Academy rate guide</a>, as I try to maintain best practices for professional projects. I am capable of working remotely.<br>
                   If you do not believe your project is of this scale or you cannot afford these rates, please, do not hesitate to reach out! I am more than happy to discuss what rates would work for you.
                 </div>
                 <div class="faq-line"></div>
@@ -238,7 +238,7 @@
                   <span class="faq-plus">+</span>
                 </div>
                 <div class="faq-answer">
-                  I am currently seeking representation at this and am open to all inquiries.
+                  I am currently seeking representation at this moment and am open to all inquiries.
                 </div>
                 <div class="faq-line"></div>
               </div>
@@ -259,6 +259,7 @@
                 </div>
                 <div class="faq-answer">
                   Outside of my demo reels above, my social media accounts have a huge backlog of my work going back years, to hopefully give you an idea of my talents as a voice actor as well as my comedic sensibilities. <br>
+                  <a href="https://www.youtube.com/@babycakesva5140">YouTube</a> <br>
                   <a href="https://www.tiktok.com/@babycakesbbz">TikTok</a> <br>
                   <a href="https://www.instagram.com/babycakesbbz/">Instagram</a> <br>
                   <a href="https://bsky.app/profile/babycakesbbz">Bluesky</a> <br>
@@ -274,7 +275,7 @@
                 <div class="faq-answer">
                   Of course! First off, just watching and interacting with my content is a huge help, so thank you; if you are interested in supporting in other ways, you can 
                   <a href="https://discord.com/invite/qsG7JxNTrt">join the Discord</a>, support me on 
-                  <a href="https://www.patreon.com/c/babycakesbbz">Patreon</a>, or check out my Ko‑fi (coming soon!).
+                  <a href="https://www.patreon.com/c/babycakesbbz">Patreon</a>, or check out my <a href="https://ko-fi.com/babycakesbbz">Ko-fi</a>.
                 </div>
                 <div class="faq-line"></div>
               </div>
